@@ -1,0 +1,388 @@
+$res--1247: "only screen and (min-width: 1247px)";
+$res_944--1246: "only screen and (min-width: 944px) and (max-width: 1246px)";
+$res_769--943: "only screen and (min-width: 769px) and (max-width: 943px)";
+$res_621--768: "only screen and (min-width: 621px) and (max-width: 768px)";
+$res_544--620: "only screen and (min-width:544px) and (max-width: 620px)";
+$res_425--543: "only screen and (min-width:402px) and (max-width: 543px)";
+$res_0--401: "only screen and (max-width: 401px)";
+@mixin res--1247 {
+    @media #{$res--1247} {
+        @content;
+    }
+}
+
+@include res--1247() {
+    .header {
+        width: 90%;
+        &-logo {
+            width: 45%;
+        }
+        &-login {
+            width: 55%;
+            .header__form {
+                width: 93%;
+                position: relative;
+                top: 25%;
+                left: 15%;
+                .block {
+                    width: 65%;
+                }
+                &--forgot {
+                    margin: 20px 25px 10px 10px;
+                }
+            }
+        }
+    }
+}
+
+@mixin res_944--1246 {
+    @media #{$res_944--1246} {
+        @content;
+    }
+}
+
+@include res_944--1246() {
+    .header {
+        width: 85%;
+        &-logo {
+            width: 50%;
+            &__img {
+                margin-top: 45px;
+                width: 100%;
+                height: 65%;
+            }
+        }
+        &-login {
+            width: 50%;
+            .header__form {
+                top: 25%;
+                left: 50%;
+                padding: 0 40px;
+                &--text,
+                .fa-user,
+                .fa-lock {
+                    line-height: 32px;
+                }
+                .fa-user,
+                .fa-lock {
+                    position: relative;
+                    margin-top: 10px;
+                    font-size: 32px;
+                }
+                &--text {
+                    position: relative;
+                    top: -7px;
+                    width: 85%;
+                }
+                &--forgot {
+                    position: relative;
+                    font-size: 15px;
+                    margin: 14px 10px 5px 5px;
+                }
+                .btn {
+                    font-size: 18px;
+                    padding: 5px 20px !important;
+                }
+                .btn:hover {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}
+
+@mixin res_769--943 {
+    @media #{$res_769--943} {
+        @content;
+    }
+}
+
+@include res_769--943() {
+    .header {
+        position: relative;
+        width: 95%;
+        top: 31%;
+        left: 52%;
+        &-logo {
+            border-right: none;
+            width: 30%;
+            &__img {
+                width: 100%;
+                height: 35%;
+            }
+        }
+        &-login {
+            width: 70%;
+            .header__form {
+                position: relative;
+                top: 50%;
+                left: -5%;
+                .fa-user,
+                .fa-lock {
+                    font-size: 35px;
+                    position: relative;
+                }
+                &--text,
+                .fa-user,
+                .fa-lock {
+                    line-height: 35px;
+                    margin: 0 5px;
+                }
+                &--id,
+                &--password {
+                    position: relative;
+                    top: -8px;
+                    width: 60%;
+                }
+                &--forgot,
+                .btn {
+                    position: relative;
+                }
+                &--forgot {
+                    margin-left: 25px;
+                }
+                .btn {
+                    display: block;
+                    font-size: 18px;
+                    letter-spacing: 2px;
+                }
+            }
+        }
+    }
+}
+
+@mixin res_621--768 {
+    @media #{$res_621--768} {
+        @content;
+    }
+}
+
+@include res_621--768() {
+    .header {
+        position: relative;
+        width: 95%;
+        top: 30%;
+        left: 52%;
+        &-logo {
+            width: 30%;
+            height: 20vh;
+            border-right: none;
+            &__img {
+                width: 150%;
+                height: 100%;
+            }
+        }
+        &-login {
+            width: 70%;
+            .header__form {
+                left: 20%;
+                top: 50%;
+                width: 80%;
+                .fa-user,
+                .fa-lock {
+                    position: relative;
+                    font-size: 30px;
+                }
+                &--text {
+                    top: -5px;
+                    position: relative;
+                    width: 80%;
+                    line-height: 30px;
+                    overflow: hidden;
+                }
+                &--forgot {
+                    display: block;
+                    position: relative;
+                    font-size: 15px;
+                }
+                .btn:hover {
+                    font-size: 25px;
+                }
+                .block {
+                    width: 80%;
+                }
+            }
+        }
+    }
+}
+
+@mixin res_544--620 {
+    @media #{$res_544--620} {
+        @content;
+    }
+}
+
+@include res_544--620() {
+    .header {
+        top: 30%;
+        left: 50%;
+        width: 90%;
+        &-logo {
+            width: 45%;
+            height: 25%;
+            border-right: none;
+        }
+        &-login {
+            width: 75%;
+            .header__form {
+                left: 10%;
+                top: 55%;
+                .fa-user,
+                .fa-lock {
+                    position: relative;
+                    font-size: 30px;
+                }
+                &--text {
+                    line-height: 40px;
+                    position: relative;
+                    top: -15px;
+                }
+                &--text,
+                .fa-user,
+                .fa-lock {
+                    margin: 5px;
+                }
+                &--forgot {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}
+
+@mixin res_425--543 {
+    @media #{$res_425--543} {
+        @content;
+    }
+}
+
+@include res_425--543() {
+    .header {
+        top: 40%;
+        left: 50%;
+        width: 90%;
+        height: 70vh;
+        &-logo {
+            width: 100%;
+            height: 15%;
+            border-right: none;
+            &__img {
+                width: 40%;
+            }
+        }
+        &-login {
+            width: 100%;
+            .header__form {
+                left: 0;
+                top: 35%;
+                width: 100%;
+                .fa-user,
+                .fa-lock {
+                    font-size: 50px;
+                    position: relative;
+                }
+                &--text {
+                    line-height: 50px;
+                    position: relative;
+                    top: -15px;
+                    width: 80%;
+                }
+                &--text,
+                .fa-user,
+                .fa-lock {
+                    margin: 5px;
+                }
+                &--forgot {
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+}
+
+@mixin res_0--401 {
+    @media #{$res_0--401} {
+        @content;
+    }
+}
+
+@include res_0--401() {
+    .header {
+        width: 100%;
+        top: 35%;
+        &-logo {
+            position: relative;
+            width: 100%;
+            height: 20vh;
+            border-right: none;
+        }
+        &-login {
+            position: relative;
+            width: 100%;
+            .header__form {
+                top: 20%;
+                left: 5%;
+                width: 90%;
+                .fa-user,
+                .fa-lock {
+                    position: relative;
+                    display: none;
+                }
+                &--text {
+                    position: relative;
+                    line-height: 40px;
+                    width: 100%;
+                    top: 0;
+                }
+                &--forgot {
+                    position: relative;
+                    left: -5%;
+                    top: 20%;
+                }
+                .btn {
+                    position: relative;
+                    left: 17%;
+                }
+            }
+        }
+    }
+}
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    80% {
+        transform: translateX(10px)
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    80% {
+        transform: translateX(-10px)
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}

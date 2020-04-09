@@ -1,0 +1,87 @@
+.nav {
+    .nav-item {
+        margin: 10px 0;
+        .nav-link {
+            text-align: center;
+        }
+    }
+}
+
+.main {
+    &-data {
+        .data-file {
+            &__list {
+                .data-file--item {
+                    display: block;
+                    margin: 15px 0;
+                    .btn--download {
+                        position: relative;
+                        float: left;
+                        font-size: 23px;
+                        padding: 0px 13px;
+                        .data-file--item__download {
+                            font-size: 12px !important;
+                        }
+                    }
+                    &__title {
+                        position: relative;
+                        text-align: left;
+                        padding: 0 0 0 100px;
+                        top: -21px;
+                    }
+                    .h6 {
+                        float: right;
+                        padding: 0 20px;
+                    }
+                    .clear {
+                        clear: both;
+                    }
+                }
+                .data-tags__listTag {
+                    clear: left;
+                    padding: 10px 0;
+                }
+            }
+        }
+        .data-link {
+            &__list {
+                .data-link--item {
+                    display: block;
+                    .btn--link {
+                        position: relative;
+                        float: left;
+                        font-size: 23px;
+                        padding: 0px 13px;
+                        .data-link--item__download {
+                            font-size: 12px !important;
+                            padding: 0px 15px;
+                        }
+                    }
+                    &__title {
+                        position: relative;
+                        text-align: left;
+                        top: -13px;
+                        padding: 0 0 0 100px;
+                    }
+                    &__name,
+                    &__date {
+                        float: right;
+                        padding: 0 20px;
+                    }
+                }
+            }
+        }
+        .data-file--item:first-child,
+        .data-link--item:first-child {
+            margin: 5px 0;
+            padding-top: 5px;
+        }
+    }
+}
+
+.block {
+    display: inline-block;
+    .btn {
+        margin: 2px;
+    }
+}

@@ -1,0 +1,157 @@
+$font: 'Roboto',
+sans-serif;
+$background-primary__blue: rgba(3, 115, 201, 0.7);
+$background-primary__dark: rgb(28, 124, 197);
+$background-primary__medium: rgb(55, 134, 194);
+$background-primary__strong: rgb(83, 139, 182);
+$color-text: #7e7979;
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font;
+    height: 100vh;
+    background-image: linear-gradient(to right, $background-primary__blue, $background-primary__dark, $background-primary__medium, $background-primary__strong);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+}
+
+.header {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 75%;
+    height: 400px;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    &-logo {
+        float: left;
+        width: 60%;
+        height: 100%;
+        border-right: 5px solid #fff;
+        &__img {
+            height: 100%;
+            width: 100%;
+            color: #fff;
+        }
+    }
+    &-login {
+        float: left;
+        width: 40%;
+        height: 100%;
+        .header__form {
+            position: absolute;
+            top: 20%;
+            left: 65%;
+            .block:first-child {
+                margin-bottom: 12px;
+            }
+            .block {
+                display: block;
+                line-height: 30px;
+            }
+            .fa-user,
+            .fa-lock {
+                color: #fff;
+                font-size: 35px;
+                margin: 0 5px;
+                position: relative;
+            }
+            &--text {
+                position: relative;
+                top: -7px;
+                outline: none;
+                line-height: 35px;
+            }
+            &--id,
+            .fa-user {
+                animation: moveInLeft 1s ease-out;
+                -webkit-animation: moveInLeft 1s ease-out;
+            }
+            &--password,
+            .fa-lock {
+                animation: moveInRight 1s ease-out;
+                -webkit-animation: moveInRight 1s ease-out;
+            }
+            &--id,
+            &--password {
+                border: 1px solid #fff;
+                border-radius: 4px;
+                font-size: 18px !important;
+                color: $color-text !important;
+                width: 85% + 1%;
+                -webkit-border-radius: 4px;
+                -moz-border-radius: 4px;
+                -ms-border-radius: 4px;
+                -o-border-radius: 4px;
+            }
+            &--forgot {
+                float: left;
+                color: #fff;
+                text-decoration: none;
+                padding: 0 0 0 10px;
+                font-size: 16px;
+                transition: .5s;
+                -webkit-transition: .5s;
+                -moz-transition: .5s;
+                -ms-transition: .5s;
+                -o-transition: .5s;
+            }
+            &--forgot,
+            .btn {
+                animation: moveInBottom 1s ease-out;
+                -webkit-animation: moveInBottom 1s ease-out;
+                margin: 15px 15px 5px 10px;
+            }
+            .btn {
+                background-color: rgba(60, 135, 191, 1);
+                padding: 7px 37px;
+                color: #fff;
+                border: 2px solid #fff;
+                border-radius: 4px;
+                font-size: 20px;
+                font-weight: 700;
+                outline: none;
+                cursor: pointer;
+                text-transform: uppercase;
+                transition: 1s;
+                letter-spacing: 3px;
+                -webkit-border-radius: 4px;
+                -moz-border-radius: 4px;
+                -ms-border-radius: 4px;
+                -o-border-radius: 4px;
+                -webkit-transition: 1s;
+                -moz-transition: 1s;
+                -ms-transition: 1s;
+                -o-transition: 1s;
+            }
+            .btn:hover {
+                // background-image: linear-gradient(to left, rgb(250, 211, 57), rgb(243, 165, 39), #F85600);
+                background-size: 300%;
+                color: #fff;
+                background-position: top;
+                font-size: 22px;
+                font-weight: 1000;
+            }
+        }
+    }
+}
+
+.clear {
+    clear: both;
+}
+
+// ----------------------
+// ----------------------
+@import './res/responsive';
+// ----------------
+// ----------------
