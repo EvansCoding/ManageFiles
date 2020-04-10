@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="/lib/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link rel="stylesheet" href="/lib/jquery.mCustomScrollbar.min.css">
-
     <!--Bootstrap Tags Input-->
     <!--source: https://bootstrap-tagsinput.github.io/bootstrap-tagsinput/examples/-->
     <link rel="stylesheet" href="/lib/bootstrap-tagsinput.css">
@@ -57,14 +56,12 @@
                         <li class="header-menu">
                             <span>General</span>
                         </li>
-
                         <li>
                             <a href="#">
                                 <i class="fa fa-tachometer-alt"></i>
                                 <span class="menu-text">Dashboard</span>
                                 <span class="badge badge-pill badge-warning">New</span>
                             </a>
-
                         </li>
                         <li class="sidebar-dropdown">
                             <a href="#">
@@ -75,7 +72,7 @@
                             <div class="sidebar-submenu">
                                 <ul>
                                     <li>
-                                        <a href="/index.html">Files</a>
+                                        <a href="/documents.html">Documents</a>
                                     </li>
                                     <li>
                                         <a href="/links.html">Links</a>
@@ -83,12 +80,24 @@
                                 </ul>
                             </div>
                         </li>
-                        <li>
-                            <a href="/folders.html">
-                                <i class="fa fa-folder"></i>
-                                <span class="menu-text">Folders</span>
+                        <li class="sidebar-dropdown">
+                            <a href="#">
+                                <i class="fas fa-database"></i>
+                                <span class="menu-text">Settings</span>
+                                <!-- <span class="badge badge-pill badge-danger">3</span> -->
                             </a>
+                            <div class="sidebar-submenu">
+                                <ul>
+                                    <li>
+                                        <a href="/tags.html">Tags</a>
+                                    </li>
+                                    <li>
+                                        <a href="/files.html">Files</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </li>
+
                         <li class="header-menu">
                             <span>Extra </span>
                         </li>
@@ -214,6 +223,7 @@
                 </div>
             </div>
         </nav>
+
         <main class="page-content pt-2">
             <div id="overlay"></div>
             <div class="container-fluid p-3">
@@ -227,11 +237,161 @@
                 </div>
                 <div class="row title">
                     <div class="form-group col-md-12">
-                        <h2 class="title-content">Manage Folders</h2>
+                        <h2 class="title-content">Manage Documents</h2>
                     </div>
                 </div>
                 <div class="row main-content">
+                    <div class="form-group col-md-12">
+                        <button type="button" class="btn btn-info btn-add-data" data-toggle="modal" data-target="#exampleModalCenter"><i class="far fa-plus-square" style="margin-right: 5px ;"></i>Add</button>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <table id="table" class="table  table-hover" style="width: 100% !important;">
+                            <thead style="width: 100%">
+                                <tr>
+                                    <th style="width: 5%;">#</th>
+                                    <th style="width: 30%; min-width: 180px;">Title</th>
+                                    <th style="width: auto;min-width: 100px;">Tags</th>
+                                    <th style="width: 10%; min-width: 100px;">Author</th>
+                                    <th style="width: 10%; min-width: 100px;">Update At</th>
+                                    <th style="width: 5%; min-width: 50px;">Publish</th>
+                                    <th style="width: 5%; min-width: 100px;">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Những website học lập trình căn bản</td>
+                                    <td>
+                                        <ul class="tags">
+                                            <li class="tag">javascript</li>
+                                            <li class="tag">css</li>
+                                            <li class="tag">fe</li>
+                                            <li class="tag">website</li>
+                                            <li class="tag">code</li>
+                                            <li class="tag">youtube</li>
+                                        </ul>
+                                    </td>
+                                    <td>Evans</td>
+                                    <td>09/04/2020</td>
+                                    <td>
+                                        <a href="#">
+                                            <span class="badge badge-danger">hidden</span>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btnView">
+                                            <i class="far fa-eye"></i>
+                                        </button>
 
+                                        <button type="button" class="btn" data-toggle="modal" data-target="#exampleModalCenter">
+                                            <i class="far fa-edit"></i>
+                                        </button>
+
+                                        <button type="button" class="btn btnDelete">
+                                            <i class="far fa-trash-alt"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Sách về ngôn ngữ lập trình C sharp </td>
+                                    <td>
+                                        <ul class="tags">
+                                            <li class="tag">program</li>
+                                            <li class="tag">laptrinh</li>
+                                            <li class="tag">c#</li>
+                                            <li class="tag">c sharp</li>
+                                        </ul>
+                                    </td>
+                                    <td>Evans</td>
+                                    <td>09/04/2020</td>
+                                    <td>
+                                        <a href="#">
+                                            <span class="badge badge-success">publish</span>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btnView">
+                                            <i class="far fa-eye"></i>
+                                        </button>
+
+                                        <button type="button" class="btn" data-toggle="modal" data-target="#exampleModalCenter">
+                                            <i class="far fa-edit"></i>
+                                        </button>
+
+                                        <button type="button" class="btn btnDelete">
+                                            <i class="far fa-trash-alt"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Kênh học css thuần</td>
+                                    <td>
+                                        <ul class="tags">
+                                            <li class="tag">program</li>
+                                            <li class="tag">laptrinh</li>
+                                            <li class="tag">c#</li>
+                                            <li class="tag">c sharp</li>
+                                        </ul>
+                                    </td>
+                                    <td>Evans</td>
+                                    <td>09/04/2020</td>
+                                    <td>
+                                        <a href="#">
+                                            <span class="badge badge-danger">hidden</span>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btnView">
+                                            <i class="far fa-eye"></i>
+                                        </button>
+
+                                        <button type="button" class="btn" data-toggle="modal" data-target="#exampleModalCenter">
+                                            <i class="far fa-edit"></i>
+                                        </button>
+
+                                        <button type="button" class="btn btnDelete">
+                                            <i class="far fa-trash-alt"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Lập trình game với Unity</td>
+                                    <td>
+                                        <ul class="tags">
+                                            <li class="tag">program</li>
+                                            <li class="tag">laptrinh</li>
+                                            <li class="tag">c#</li>
+                                            <li class="tag">c sharp</li>
+                                        </ul>
+                                    </td>
+                                    <td>Evans</td>
+                                    <td>09/04/2020</td>
+                                    <td>
+                                        <a href="#">
+                                            <span class="badge badge-success">publish</span>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btnView">
+                                            <i class="far fa-eye"></i>
+                                        </button>
+
+                                        <button type="button" class="btn" data-toggle="modal" data-target="#exampleModalCenter">
+                                            <i class="far fa-edit"></i>
+                                        </button>
+
+                                        <button type="button" class="btn btnDelete">
+                                            <i class="far fa-trash-alt"></i>
+                                        </button>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </main>
@@ -240,34 +400,35 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Update Link</h5>
+                    <h5 class="modal-title" id="exampleModalLongTitle">Update Document</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label for="inputAddress">Title</label>
-                        <input type="text" class="form-control" id="inputAddress" placeholder="Programming Language Book" required="required">
+                <form action="#">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="inputAddress">Title</label>
+                            <input type="text" class="form-control" id="inputAddress" placeholder="Programming Language Book" required="required">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputAddress">Url</label>
+                            <input type="text" class="form-control" id="inputAddress" placeholder="C Sharp . [docx | pdf | ...]" required="required">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputAddress">Tags</label>
+                            <input style="width: 100% !important;" type="text" class="form-control" value="Amsterdam,Washington,Sydney,Beijing,Cairo" data-role="tagsinput" required="required">
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="inputAddress">Url</label>
-                        <input type="text" class="form-control" id="inputAddress" placeholder="C Sharp . [docx | pdf | ...]" required="required">
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save changes</button>
                     </div>
-                    <div class="form-group">
-                        <label for="inputAddress">Tags</label>
-                        <input style="width: 100% !important;" type="text" class="form-control" value="Amsterdam,Washington,Sydney,Beijing,Cairo" data-role="tagsinput" required="required">
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
+                </form>
             </div>
         </div>
     </div>
-
-    <!--Using Script-->
+    <!-- using online scripts -->
     <script src="./lib/jquery-3.4.1.min.js" type="text/javascript"></script>
     <script src="/lib/popper.min.js" type="text/javascript"></script>
     <script src="/lib/bootstrap.min.js" type="text/javascript"></script>
@@ -276,7 +437,6 @@
     <!-------------------Bootstrap Tagsinput------------------------------>
     <script src="/lib/bootstrap-tagsinput.js" type="text/javascript"></script>
     <!-- <script src="/lib/bootstrap-tagsinput-angular.js" type="text/javascript"></script> -->
-
 
     <!--Sweetalert2-->
     <script src="/lib/sweetalert2.min.js" type="text/javascript"></script>

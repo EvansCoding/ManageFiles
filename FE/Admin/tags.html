@@ -238,7 +238,7 @@
                 </div>
                 <div class="row title">
                     <div class="form-group col-md-12">
-                        <h2 class="title-content">Manage Links</h2>
+                        <h2 class="title-content">Manage Tags</h2>
                     </div>
                 </div>
                 <div class="row main-content">
@@ -250,27 +250,20 @@
                             <thead style="width: 100%">
                                 <tr>
                                     <th style="width: 5%;">#</th>
-                                    <th style="width: 30%; min-width: 180px;">Title</th>
-                                    <th style="width: auto;min-width: 100px;">Tags</th>
-                                    <th style="width: 10%; min-width: 100px;">Author</th>
-                                    <th style="width: 10%; min-width: 100px;">Update At</th>
-                                    <th style="width: 5%; min-width: 50px;">Publish</th>
+                                    <th style="width: 26%; min-width: 140px;">Tag</th>
+                                    <th style="width: 20%; min-width: 100px;">Count Used</th>
+                                    <th style="width: 20%;">Author</th>
+                                    <th style="width: 20%; min-width: 100px;">Update At</th>
+                                    <th style="width: 10%; ">Publish</th>
                                     <th style="width: 5%; min-width: 100px;">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>1</td>
-                                    <td>Những website học lập trình căn bản</td>
+                                    <td>program</td>
                                     <td>
-                                        <ul class="tags">
-                                            <li class="tag">javascript</li>
-                                            <li class="tag">css</li>
-                                            <li class="tag">fe</li>
-                                            <li class="tag">website</li>
-                                            <li class="tag">code</li>
-                                            <li class="tag">youtube</li>
-                                        </ul>
+                                        10
                                     </td>
                                     <td>Evans</td>
                                     <td>09/04/2020</td>
@@ -295,14 +288,9 @@
                                 </tr>
                                 <tr>
                                     <td>2</td>
-                                    <td>Sách về ngôn ngữ lập trình C sharp </td>
+                                    <td>c </td>
                                     <td>
-                                        <ul class="tags">
-                                            <li class="tag">program</li>
-                                            <li class="tag">laptrinh</li>
-                                            <li class="tag">c#</li>
-                                            <li class="tag">c sharp</li>
-                                        </ul>
+                                        5
                                     </td>
                                     <td>Evans</td>
                                     <td>09/04/2020</td>
@@ -327,14 +315,9 @@
                                 </tr>
                                 <tr>
                                     <td>3</td>
-                                    <td>Kênh học css thuần</td>
+                                    <td>css</td>
                                     <td>
-                                        <ul class="tags">
-                                            <li class="tag">program</li>
-                                            <li class="tag">laptrinh</li>
-                                            <li class="tag">c#</li>
-                                            <li class="tag">c sharp</li>
-                                        </ul>
+                                        16
                                     </td>
                                     <td>Evans</td>
                                     <td>09/04/2020</td>
@@ -359,14 +342,9 @@
                                 </tr>
                                 <tr>
                                     <td>4</td>
-                                    <td>Lập trình game với Unity</td>
+                                    <td>unity</td>
                                     <td>
-                                        <ul class="tags">
-                                            <li class="tag">program</li>
-                                            <li class="tag">laptrinh</li>
-                                            <li class="tag">c#</li>
-                                            <li class="tag">c sharp</li>
-                                        </ul>
+                                        100
                                     </td>
                                     <td>Evans</td>
                                     <td>09/04/2020</td>
@@ -401,7 +379,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Update Link</h5>
+                    <h5 class="modal-title" id="exampleModalLongTitle">Update Tag</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -409,16 +387,8 @@
                 <form action="#">
                     <div class="modal-body">
                         <div class="form-group">
-                            <label for="inputAddress">Title</label>
-                            <input type="text" class="form-control" id="inputAddress" placeholder="Programming Language Book" required="required">
-                        </div>
-                        <div class="form-group">
-                            <label for="inputAddress">Url</label>
-                            <input type="text" class="form-control" id="inputAddress" placeholder="C Sharp . [docx | pdf | ...]" required="required">
-                        </div>
-                        <div class="form-group">
-                            <label for="inputAddress">Tags</label>
-                            <input style="width: 100% !important;" type="text" class="form-control" value="Amsterdam,Washington,Sydney,Beijing,Cairo" data-role="tagsinput" required="required">
+                            <label for="inputAddress">Tag</label>
+                            <input type="text" class="form-control" id="inputAddress" placeholder="program" required="required">
                         </div>
                     </div>
                     <div class="modal-footer">
