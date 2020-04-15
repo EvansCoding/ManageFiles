@@ -27,13 +27,13 @@ class CategoryController extends Controller
             'title' => ['style' => 'width: 30%; min-width: 180px;', 'data' => trans('category.title')],
             'url' => ['style' => 'width: auto;min-width: 100px;', 'data' => trans('category.url')],
             'serial' => ['style' => 'width: 10%; min-width: 100px;', 'data' =>  trans('category.serial')],
-            'create_at' => ['style' => 'width: 20%; min-width: 50px;', 'data' =>  trans('category.create_at')],
+            'create_at' => ['style' => 'width: 20%; min-width: 100px;', 'data' =>  trans('category.create_at')],
             'update_at' => ['style' => 'width: 20%; min-width: 100px;', 'data' =>  trans('category.update_at')],
-            'action' => ['style' => 'width: 10%; min-width: 100px;', 'data' =>  trans('category.action')]
+            'action' => ['style' => 'width: 10%; min-width: 80px;', 'data' =>  trans('category.admin.action')]
         ];
 
         $obj = new CategoryModel;
-        $dataTmp = $obj->paginate(20);
+        $dataTmp = $obj->paginate(10);
         $dataTr = [];
         $index = 1;
         foreach ($dataTmp as $key => $row) {
@@ -55,6 +55,9 @@ class CategoryController extends Controller
                 '
             ];
         }
+        $data['pagination'] = $dataTmp->appends(request()->except(['_token', '_pjax']))->links('admin.component.pagination');
+
+        $data['resultItems'] = trans('category.admin.result_item', ['item_from' => $dataTmp->firstItem(), 'item_to' => $dataTmp->lastItem(), 'item_total' => $dataTmp->total()]);
 
         $data['listTh'] = $listTh;
         $data['dataTr'] = $dataTr;

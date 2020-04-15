@@ -7,18 +7,15 @@ jQuery(function($) {
                 $(".page-wrapper").addClass("pinned");
                 $("#sidebar").hover(
                     function() {
-                        console.log("mouseenter");
                         $(".page-wrapper").addClass("sidebar-hovered");
                     },
                     function() {
-                        console.log("mouseout");
                         $(".page-wrapper").removeClass("sidebar-hovered");
                     }
                 );
             }
         } else {
             if ($(".page-wrapper").hasClass("pinned")) {
-                // unpin sidebar when hovered
                 $(".page-wrapper").removeClass("pinned");
                 $("#sidebar").unbind("hover");
             }
@@ -34,7 +31,10 @@ jQuery(function($) {
             "scrollCollapse": true,
             "paging": true,
             "responsive": true,
-            "bAutoWidth": true
+            "bAutoWidth": true,
+            "bInfo": false,
+            "paging": false,
+            "bPaginate": false
         });
     });
 
@@ -118,7 +118,7 @@ jQuery(function($) {
     }
 
     /**
-     * using sweetalert nofify when delete object 
+     * using sweetalert nofify when delete object
      */
 
 

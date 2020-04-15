@@ -1,6 +1,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="2KSoftware.vn">
+
+{{-- <link href="{{ asset('/css/app.css') }}" rel="stylesheet"> --}}
+
 <title>Management Data</title>
 
 <link rel="shortcut icon " href="{{ asset('admin/assets/img/icon/icons8_google_cloud_platform.ico') }}">

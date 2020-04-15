@@ -45,8 +45,6 @@ body {
         &.pinned {
             .page-content {
                 @media screen and (max-width: 768px) {
-                    // padding-left: $sidebar-pinned-width;
-                    // padding-left: 1200px;
                     padding-left: 80px;
                 }
             }

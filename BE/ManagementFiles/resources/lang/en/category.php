@@ -9,5 +9,8 @@ return [
     'serial' => 'Serial',
     'create_at' => 'Create At',
     'update_at' => 'Update At',
-    'action' => 'Action'
+    'admin' => [
+        'result_item' => 'Showing <b>:item_from</b> to <b>:item_to</b> of <b>:item_total</b> entries</b>',
+        'action' => 'Action'
+    ]
 ];
