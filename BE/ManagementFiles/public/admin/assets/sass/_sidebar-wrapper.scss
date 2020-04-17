@@ -37,7 +37,7 @@
     .sidebar-content {
         max-height: calc(100% - #{$sidebar-footer-height});
         height: calc(100% - #{$sidebar-footer-height});
-        overflow-y: scroll;
+        overflow-y: hidden;
         position: relative;
         &.desktop {
             overflow-y: hidden;

@@ -16,16 +16,25 @@ body {
         width: 100%;
         transition: padding-left .3s ease;
         overflow-x: hidden;
-        .overlay {
-            position: fixed;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            z-index: 998;
-            background: #000;
-            opacity: .5;
-            display: none;
+        .topnavbar {
+            z-index: 998 !important;
+            position: fixed !important;
+            height: 40px;
+            width: 100%;
+            background-color: #fff;
+            .topnavbar-icon {
+                padding-top: 4px;
+                height: 32px;
+                box-shadow: 0 2px 2px -2px rgba(0, 0, 0, .2);
+                // z-index: 999;
+                .fa-bars {
+                    font-size: 24px;
+                    color: #646464 !important;
+                }
+            }
+        }
+        >.container-fluid {
+            padding-top: 0px !important;
         }
     }
     &.toggled {
@@ -89,6 +98,7 @@ body {
         margin-right: 0px;
     }
     .title {
+        padding-top: 50px;
         .form-group {
             margin-bottom: 0px !important;
             padding-bottom: 0px;
@@ -109,6 +119,34 @@ body {
             -moz-border-radius: 0;
             -ms-border-radius: 0;
             -o-border-radius: 0;
+        }
+        #loading {
+            padding-left: 280px;
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100% !important;
+            height: 100% !important;
+            z-index: 50;
+            background: rgba(255, 255, 255, 0.7);
+        }
+        .overlay {
+            text-align: center;
+            display: block;
+            position: absolute;
+            top: 50% !important;
+            left: 50% !important;
+            transform: translate(-50%, -50%);
+            transform: -webkit-translate(-50%, -50%);
+            transform: -moz-translate(-50%, -50%);
+            transform: -ms-translate(-50%, -50%);
+            color: #1f222b;
+            z-index: 9999;
+            background: rgba(255, 255, 255, 0.7);
+        }
+        .fa-5x {
+            font-size: 2em;
         }
     }
 }

@@ -1,6 +1,20 @@
 jQuery(function($) {
 
     $(document).ready(function() {
+
+        $('#table').DataTable({
+            "scrollY": "70vh",
+            "scrollX": true,
+            "scrollCollapse": true,
+            "paging": true,
+            "responsive": true,
+            "bAutoWidth": true,
+            "bInfo": false,
+            "paging": false,
+            "bPaginate": false,
+            "searching": false
+        });
+
         let width = $(window).width();
         if (width < 768) {
             if (!$(".page-wrapper").hasClass("pinned")) {
@@ -21,21 +35,6 @@ jQuery(function($) {
             }
         }
         scrollSidebar();
-
-        /**
-         * intilize Datatables
-         */
-        $('#table').DataTable({
-            "scrollY": "70vh",
-            "scrollX": true,
-            "scrollCollapse": true,
-            "paging": true,
-            "responsive": true,
-            "bAutoWidth": true,
-            "bInfo": false,
-            "paging": false,
-            "bPaginate": false
-        });
     });
 
     $(window).resize(function() {
@@ -98,7 +97,6 @@ jQuery(function($) {
                     $(".page-wrapper").removeClass("sidebar-hovered");
                 }
             );
-
         }
     });
     //toggle sidebar overlay
@@ -116,29 +114,4 @@ jQuery(function($) {
             $(".sidebar-content").addClass("desktop");
         }
     }
-
-    /**
-     * using sweetalert nofify when delete object
-     */
-
-
-    $(".btnDelete").click(function() {
-        Swal.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
-        }).then((result) => {
-            if (result.value) {
-                Swal.fire(
-                    'Deleted!',
-                    'Your file has been deleted.',
-                    'success'
-                )
-            }
-        });
-    })
 });

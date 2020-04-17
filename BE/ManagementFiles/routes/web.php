@@ -27,10 +27,20 @@ Route::group(['prefix' => $prefixAdmin], function () {
             'as' => $controllerName,
             'uses' => $controller . 'index'
         ]);
+        Route::post('/',  [
+            'as' => $controllerName . '.store',
+            'uses' => $controller . 'store'
+        ]);
+
+        Route::post('/show', [
+            'as' => $controllerName . '.show',
+            'uses' => $controller . 'show'
+        ]);
+
+        Route::post('/delete', [
+            'as' => $controllerName . '.delete',
+            'uses' => $controller . 'delete'
+        ]);
     });
-
     //-----------------------------------------
-
-
-
 });
