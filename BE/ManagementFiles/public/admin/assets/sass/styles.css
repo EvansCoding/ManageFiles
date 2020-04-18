@@ -742,12 +742,84 @@ body {
   text-align: center;
 }
 
-.page-wrapper .main-content .btn-add-data {
+.page-wrapper .main-content .btn-header-box, .page-wrapper .main-content .btn-add-data, .page-wrapper .main-content .btn-delete-data, .page-wrapper .main-content .btn-refresh-data, .page-wrapper .main-content .btn-sort-data {
+  width: 80px !important;
   padding: 3px 6px;
   width: 60px;
   font-size: 12px;
   vertical-align: middle;
   font-family: Arial, Helvetica, sans-serif;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+}
+
+.page-wrapper .main-content .checkbox-check-all {
+  padding: 0 !important;
+}
+
+.page-wrapper .main-content .container-checkbox {
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.page-wrapper .main-content .container-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.page-wrapper .main-content .container-checkbox input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+.page-wrapper .main-content .container-checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.page-wrapper .main-content .container-checkbox .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 26px;
+  width: 25px;
+  background-color: #eee;
+}
+
+.page-wrapper .main-content .container-checkbox .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 10px;
+  top: 7px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.page-wrapper .main-content .container-checkbox:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+.page-wrapper .main-content .select-sort {
+  padding: 3px 6px;
+  height: 27px;
+  vertical-align: middle;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px !important;
   border-radius: 0;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;

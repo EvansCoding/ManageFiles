@@ -114,4 +114,7 @@ jQuery(function($) {
             $(".sidebar-content").addClass("desktop");
         }
     }
+    $("#grid-select-all").click(function() {
+        $(".grid-row-checkbox").prop('checked', $(this).prop('checked'));
+    });
 });

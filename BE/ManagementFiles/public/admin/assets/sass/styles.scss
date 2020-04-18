@@ -108,12 +108,97 @@ body {
         }
     }
     .main-content {
-        .btn-add-data {
+        .btn-header-box {
+            width: 80px !important;
             padding: 3px 6px;
             width: 60px;
             font-size: 12px;
             vertical-align: middle;
             font-family: Arial, Helvetica, sans-serif;
+            border-radius: 0;
+            -webkit-border-radius: 0;
+            -moz-border-radius: 0;
+            -ms-border-radius: 0;
+            -o-border-radius: 0;
+        }
+        .btn-add-data {
+            @extend .btn-header-box;
+        }
+        .btn-delete-data {
+            @extend .btn-header-box;
+        }
+        .btn-refresh-data {
+            @extend .btn-header-box;
+        }
+        .btn-sort-data {
+            @extend .btn-header-box;
+        }
+        .checkbox-check-all {
+            padding: 0 !important;
+        }
+        $background_color_1: #eee;
+        $background_color_2: #ccc;
+        $background_color_3: #2196F3;
+        .container-checkbox {
+            display: block;
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            font-size: 22px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            input {
+                position: absolute;
+                opacity: 0;
+                cursor: pointer;
+                &:checked {
+                    &~.checkmark {
+                        background-color: $background_color_3;
+                        &:after {
+                            display: block;
+                        }
+                    }
+                }
+            }
+            .checkmark {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 26px;
+                width: 25px;
+                background-color: $background_color_1;
+                &:after {
+                    content: "";
+                    position: absolute;
+                    display: none;
+                    left: 10px;
+                    top: 7px;
+                    width: 5px;
+                    height: 10px;
+                    border: solid white;
+                    border-width: 0 3px 3px 0;
+                    -webkit-transform: rotate(45deg);
+                    -ms-transform: rotate(45deg);
+                    transform: rotate(45deg);
+                }
+            }
+            &:hover {
+                input {
+                    &~.checkmark {
+                        background-color: $background_color_2;
+                    }
+                }
+            }
+        }
+        .select-sort {
+            padding: 3px 6px;
+            height: 27px;
+            vertical-align: middle;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px !important;
             border-radius: 0;
             -webkit-border-radius: 0;
             -moz-border-radius: 0;

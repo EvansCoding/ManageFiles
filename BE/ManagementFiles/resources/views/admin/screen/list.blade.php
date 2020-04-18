@@ -20,8 +20,31 @@
             </div>
         </div>
         <div class="row main-content" style="position: relative" id="pjax-container">
-            <div class="form-group col-md-12" >
-                <button type="button" class="btn btn-info btn-add-data" ><i class="far fa-plus-square" style="margin-right: 5px ;"></i>Add</button>
+            <div class="form-group col-md-9"  >
+                <div class="btn checkbox-check-all  " style="height: 100%;margin-left: 10px; margin-right: -1px; vertical-align: middle">
+                    <label class="container-checkbox">
+                        <input type="checkbox" id="grid-select-all">
+                        <span class="checkmark"></span>
+                      </label>
+                </div>
+
+                <button type="button" class="btn btn-danger btn-delete-data" style="width: 100px" ><i class="far fa-trash-alt" style="margin-right: 5px ;"></i>Delete</button>
+                <button type="button" class="btn btn-info btn-refresh-data"  ><i class="fas fa-sync-alt" style="margin-right: 5px ;"></i>Refresh</button>
+                <div class="btn-group">
+                    <select class="form-control select-sort" id="order_sort">
+                        <option value="id__desc">ID desc</option>
+                        <option value="id__asc">ID asc</option>
+                        <option value="email__desc">Email desc</option>
+                        <option value="email__asc">Email asc</option>
+                        <option value="created_at__desc">Date desc</option>
+                        <option value="created_at__asc">Date asc</option>
+                    </select>
+                </div>
+
+                <button type="button" class="btn btn-secondary btn-sort-data"  ><i class="fas fa-filter" style="margin-right: 5px ;"></i>Sort</button>
+            </div>
+            <div class="form-group col-md-3" >
+                <button type="button" class="btn btn-success btn-add-data" style="float: right"><i class="far fa-plus-square" style="margin-right: 5px ;"></i>Add</button>
             </div>
             <div id="pjax-container" class="form-group col-md-12" style="height: 100%">
                 <table id="table" class="table  table-hover" style="width: 100% !important;">
@@ -76,6 +99,10 @@
                         <div class="form-group">
                             <label for="inputUrl">Url</label>
                             <input name="url" type="text" class="form-control" id="inputUrl" placeholder="https://google.com" required="required">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputSerial">Url</label>
+                            <input name="serial" type="number" class="form-control" id="inputSerial" placeholder="0" required="required">
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -134,7 +161,7 @@
 
     // function insert or update item
     $(function () {
-        $('form').on('submit', function (e) {
+        $('#formStore').on('submit', function (e) {
             e.preventDefault();
             $.ajaxSetup({
                 headers: {
@@ -143,8 +170,8 @@
             });
             var url = $(this).attr('data-url');
             $.ajax({
-                type: 'post',
-                url: url,
+                method: 'post',
+                url: '{{ $urlStore }}',
                 data: new FormData( this ),
                 dataType : 'json',
                 contentType: false,
@@ -180,6 +207,7 @@
                 $('#inputTitle').val(data['title']);
                 $('#inputUrl').val(data['url']);
                 $('#inputID').val(data['id']);
+                $('#inputSerial').val(data['serial']);
             }
             ,error: function(data, textStatus, errorThrown) {
                 var errors = data.responseJSON;
@@ -189,7 +217,7 @@
     }
 
     // function delete item
-    function  deleteItem(ids){
+    function  deleteItem(id){
         Swal.fire({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",
@@ -208,7 +236,7 @@
                 $.ajax({
                     method: 'post',
                     url: '{{ $urlDeleteItem ?? '' }}',
-                    data: {ids : ids},
+                    data: {id : id},
                     success: function (data) {
                         if(data){
                             $.pjax.reload('#pjax-container');

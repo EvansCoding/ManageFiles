@@ -25,10 +25,12 @@ class CategoryController extends Controller
         $data = [
             'title_main' => trans('category.title_main'),
             'urlDeleteItem' => route('category.delete'),
-            'urlShowItem' => route('category.show')
+            'urlShowItem' => route('category.show'),
+            'urlStore' => route('category.store')
         ];
 
         $listTh = [
+            '' => ['style' => 'width: 5%;', 'data' => ''],
             '#' => ['style' => 'width: 5%;', 'data' => trans('category.#')],
             'title' => ['style' => 'width: 20%; min-width: 100px;', 'data' => trans('category.title')],
             'url' => ['style' => 'width: 30%;min-width: 180px;', 'data' => trans('category.url')],
@@ -45,6 +47,11 @@ class CategoryController extends Controller
 
         foreach ($dataTmp as $key => $row) {
             $dataTr[] = [
+                'checkbox' => '
+                            <label class="container-checkbox" style="margin-top: -12px;">
+                                <input type="checkbox" class="grid-row-checkbox" data-id="' . $row['id'] . '">
+                                <span class="checkmark"></span>
+                            </label>',
                 '#' => $currentPage <= 1 ? $key + 1 : (($currentPage * $pageSize) - $pageSize) + ($key + 1),
                 'title' => $row['title'],
                 'url' => $row['url'],
@@ -77,10 +84,11 @@ class CategoryController extends Controller
         $data = [];
         if ($request->id === null) {
             $data = new CategoryModel;
-            $data->id = Uuid::generate();
+            $data->id = Uuid::generate()->string;
             $data->serial = 1;
             $data->title = $request->title;
             $data->url = $request->url;
+            $data->url = $request->serial;
             $date = new DateTime('now', new DateTimeZone('Asia/Bangkok'));
             $data->create_at = $date;
             $data->update_at = $date;
@@ -91,6 +99,7 @@ class CategoryController extends Controller
             $model = array(
                 'title' => $request->title,
                 'url' => $request->url,
+                'serial' => $request->serial,
                 'update_at' => new DateTime('now', new DateTimeZone('Asia/Bangkok'))
             );
             $data['success'] = CategoryModel::where('id', $request->id)->update($model);
@@ -106,7 +115,7 @@ class CategoryController extends Controller
 
     public function delete(Request $request)
     {
-        $data = CategoryModel::destroy($request['ids']);
+        $data = CategoryModel::destroy($request['id']);
         return response()->json($data);
     }
 }
